@@ -10,6 +10,4 @@ public class TowerClassScript : ScriptableObject
     public float size;
     public string towerName;
     public string description;
-    public GameObject model;
-
 }
