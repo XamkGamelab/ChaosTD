@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &175199579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+  m_PrefabInstance: {fileID: 3135420362085931476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &239015173
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +138,7 @@ GameObject:
   - component: {fileID: 239015175}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,6 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596498869}
   - component: {fileID: 1596498870}
+  - component: {fileID: 1596498871}
   m_Layer: 0
   m_Name: CameraSystem
   m_TagString: Untagged
@@ -754,6 +760,19 @@ MonoBehaviour:
   cameraPosition: {x: 0, y: 4, z: -1.54}
   cameraRotation: {x: 0.57357645, y: 0, z: 0, w: 0.81915206}
   map: {fileID: 1594561480}
+--- !u!114 &1596498871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596498868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984c82a22f580244a6da7b40bba9488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerPlacementSystem
+  tower: {fileID: 175199579}
 --- !u!1 &1829563021
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa47cf6ba914c542a51603b13592ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySplineManager
+  enemyTypes: []
   splineContainer: {fileID: 0}
   mainPath:
     m_EditModeType: 1
@@ -953,6 +973,67 @@ MonoBehaviour:
       m_Data: []
     m_ObjectData:
       m_Data: []
+--- !u!1001 &3135420362085931476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.31114
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.16398
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_Name
+      value: TestEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -962,3 +1043,4 @@ SceneRoots:
   - {fileID: 1596498869}
   - {fileID: 1594561481}
   - {fileID: 631084252}
+  - {fileID: 3135420362085931476}

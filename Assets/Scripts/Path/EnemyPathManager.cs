@@ -1,49 +1,37 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Splines;
 
-[System.Serializable]
 
 public class EnemySplineManager : MonoBehaviour
 {
-    public struct EnemyData
-    {
-        public GameObject enemy;
+    [SerializeField] private EnemyClassScript[] enemyTypes;
 
-        public string name;
-        public float position;
-        private float speed;
-        private float health;
-
-        void Initialize()
-        {
-            //TEMP
-            speed = 5f;
-            health = 10f;
-        }
-
-
-    }
-    [SerializeField]
-    public EnemyData[] enemyData;
+    private List<GameObject> activeEnemies = new List<GameObject>();
 
     public SplineContainer splineContainer;
     public Spline mainPath;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void SpawnEnemy(EnemyClassScript data)
+    {
+        
+    }
     void Start()
     {
         splineContainer = GetComponent<SplineContainer>();
         mainPath = splineContainer.Splines[0];
     }
-    void SetEnemyLocation(EnemyData eData, Spline splinePath)
+    void SetEnemyLocation( Spline splinePath)
     {
-        eData.name = "Hello, world";
     }
     void IterateEnemies()
     {
-        for (int i = 0; i < enemyData.Length; i++)
+        for (int i = 0; i < 1; i++)
         {
-            SetEnemyLocation(enemyData[i], mainPath);
+            SetEnemyLocation( mainPath);
         }
     }
 
