@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044f2972b9bb2d14f8b77fd6c6de11f4, type: 3}
   m_Name: TestEnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyClassScript
-  HP: 0
-  damage: 0
+  HP: 5
+  damage: 5
   enemyName: 
-  size: 2
+  size: 5
   speed: 5
-  armor: 0
-  prefab: {fileID: 0}
+  armor: 5
+  prefab: {fileID: 8312347888803911703, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}

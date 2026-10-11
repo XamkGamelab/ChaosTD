@@ -39,7 +39,7 @@ public class EnemyMovementManager : MonoBehaviour
         splineReady = true;
         pathLength = worldSpline.GetLength();
 
-        if (pathLength > 0f)
+        if (pathLength < 0f)
         {
             Debug.LogError("Path length must be greater then 0");
         }
@@ -71,7 +71,7 @@ public class EnemyMovementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!splineReady || pathLength > 0)
+        if (!splineReady || pathLength <= 0)
             return;
 
             float dt = Time.deltaTime;
