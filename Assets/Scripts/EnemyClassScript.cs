@@ -9,4 +9,5 @@ public class EnemyClassScript : ScriptableObject
     public float size;
     public float speed;
     public float armor;
+    public TestEnemy prefab;
 }

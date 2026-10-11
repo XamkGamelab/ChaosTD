@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 1829563023}
   - component: {fileID: 1829563022}
   - component: {fileID: 1829563024}
+  - component: {fileID: 1829563025}
   m_Layer: 0
   m_Name: PathSystem
   m_TagString: Untagged
@@ -955,24 +956,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829563021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa47cf6ba914c542a51603b13592ba4, type: 3}
+  m_Script: {fileID: 11500000, guid: dcde8fc984abf2449b8ff0063b5d6ade, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySplineManager
-  enemyTypes: []
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementManager
   splineContainer: {fileID: 0}
-  mainPath:
-    m_EditModeType: 1
-    m_Knots: []
-    m_MetaData: []
-    m_Closed: 0
-    m_IntData:
-      m_Data: []
-    m_FloatData:
-      m_Data: []
-    m_Float4Data:
-      m_Data: []
-    m_ObjectData:
-      m_Data: []
+  splineIndex: 0
+--- !u!114 &1829563025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829563021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e561051f225394d9b1899d4357edd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  movementManager: {fileID: 0}
+  enemyTypes:
+  - {fileID: 0}
 --- !u!1001 &3135420362085931476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,11 +1026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
       propertyPath: m_Name
-      value: TestEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
-      propertyPath: m_TagString
-      value: Placeable
+      value: TestEnemyPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
