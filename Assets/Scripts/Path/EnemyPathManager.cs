@@ -7,7 +7,7 @@ using UnityEngine.Splines;
 
 public class EnemySplineManager : MonoBehaviour
 {
-    [SerializeField] private EnemyClassScript[] enemyTypes;
+    [SerializeField] private Enemy[] enemyTypes;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
 
@@ -15,7 +15,7 @@ public class EnemySplineManager : MonoBehaviour
     public Spline mainPath;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    private void SpawnEnemy(EnemyClassScript data)
+    private void SpawnEnemy(Enemy data)
     {
         
     }
