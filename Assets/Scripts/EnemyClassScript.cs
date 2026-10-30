@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyClassScript", menuName = "Scriptable Objects/EnemyClassScript")]
-public class EnemyClassScript : ScriptableObject
+public class Enemy : ScriptableObject
 {
     public float HP;
     public int damage;
