@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        EnemyClassScript data = enemyTypes[typeIndex];
+        Enemy data = enemyTypes[typeIndex];
 
         if (data == null)
         {
