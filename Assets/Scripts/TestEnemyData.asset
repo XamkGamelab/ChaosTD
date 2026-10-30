@@ -16,6 +16,6 @@ MonoBehaviour:
   damage: 5
   enemyName: 
   size: 5
-  speed: 5
+  speed: 10
   armor: 5
   prefab: {fileID: 8312347888803911703, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
