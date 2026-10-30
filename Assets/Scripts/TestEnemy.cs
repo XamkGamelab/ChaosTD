@@ -9,7 +9,7 @@ public class TestEnemy : MonoBehaviour
 
     public float DistanceTravelled { get; set; }
 
-    public void Initialize(EnemyClassScript data)
+    public void Initialize(Enemy data)
     {
         currentHP = data.HP;
         damage = data.damage;
