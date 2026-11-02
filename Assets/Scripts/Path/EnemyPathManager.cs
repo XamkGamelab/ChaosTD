@@ -35,7 +35,7 @@ public class EnemySplineManager : MonoBehaviour
     {
         for (int i = 0; i < 1; i++)
         {
-            SetEnemyLocation( mainPath);
+            SetEnemyLocation(mainPath);
         }
     }
 
@@ -44,7 +44,10 @@ void Update()
 
     {
         IterateEnemies();
-
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 14af30aff2f421d1ee3fe55e15eac8dbfe1ed473
 }

@@ -1,18 +1,40 @@
+using System.Threading;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyMovementManager movementManager;
     [SerializeField] private Enemy[] enemyTypes;
+
+    [SerializeField] bool enableSpawnOnInterval = false;
+    [SerializeField] float spawnInterval = 1f;
+    float spawnTimer = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+
+
+
+    void Start()
     {
         movementManager = GetComponent<EnemyMovementManager>();
         // Spawn one enemy of the first configured type.
         SpawnEnemy(0);
-    
     }
 
+    void Update()
+    {
+        SpawnOnInterval();
+    }
+
+    public void SpawnOnInterval()
+    {
+        if (spawnTimer > 0f)
+            spawnTimer -= Time.deltaTime;
+        else
+        {
+            spawnTimer = spawnInterval;
+            SpawnEnemy(0);
+        }
+    }
     public void SpawnEnemy(int typeIndex)
     {
 
