@@ -45,9 +45,5 @@ void Update()
     {
         IterateEnemies();
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 14af30aff2f421d1ee3fe55e15eac8dbfe1ed473
 }

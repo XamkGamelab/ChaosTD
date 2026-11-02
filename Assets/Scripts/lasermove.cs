@@ -6,8 +6,13 @@ public class lasermove : MonoBehaviour
     private Vector3 direction;
     private float force = 40f;
     private Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    Collider Collider;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public void Start()
+    {
+        Collider = GetComponent<Collider>();
+    }
     public void Setup(Vector3 direction)
     {
         rb = GetComponent<Rigidbody>();
@@ -19,4 +24,8 @@ public class lasermove : MonoBehaviour
         rb.AddForce(direction * force, ForceMode.Impulse);
     }
     // Update is called once per frame
+    private void Update()
+    {
+        
+    }
 }
