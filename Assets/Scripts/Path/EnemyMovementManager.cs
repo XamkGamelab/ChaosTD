@@ -49,6 +49,14 @@ public class EnemyMovementManager : MonoBehaviour
 
     }
 
+    public TestEnemy GetFirstEnemy()
+    {
+        if (activeEnemies.Count <= 0)
+            return null;
+
+        return activeEnemies[0];
+    }
+
     public void AddEnemy(TestEnemy enemy)
     {
         if (!splineReady || enemy == null)

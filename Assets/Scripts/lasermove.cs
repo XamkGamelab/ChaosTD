@@ -4,7 +4,7 @@ public class lasermove : MonoBehaviour
 {
     private GameObject shooterTower;
     private Vector3 direction;
-    private float force = 20f;
+    private float force = 40f;
     private Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
