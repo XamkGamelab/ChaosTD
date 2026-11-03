@@ -19,6 +19,10 @@ public class EnemySplineManager : MonoBehaviour
     {
         
     }
+    public void GetLocation()
+    {
+        //return activeEnemies.transform.position;
+    }
     void Start()
     {
         splineContainer = GetComponent<SplineContainer>();
