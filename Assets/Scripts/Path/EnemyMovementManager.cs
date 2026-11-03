@@ -43,10 +43,6 @@ public class EnemyMovementManager : MonoBehaviour
         {
             Debug.LogError("Path length must be greater then 0");
         }
-
-
-       
-
     }
 
     public void AddEnemy(TestEnemy enemy)
