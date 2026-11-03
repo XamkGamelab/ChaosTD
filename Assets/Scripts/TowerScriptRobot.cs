@@ -13,7 +13,7 @@ public class TowerScriptRobot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        spawner = FindFirstObjectByType<EnemyMovementManager>(FindObjectsInactive.Include);
     }
 
     // Update is called once per frame
