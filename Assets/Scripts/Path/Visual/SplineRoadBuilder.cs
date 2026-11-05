@@ -21,6 +21,8 @@ public class SplineRoadBuilder : MonoBehaviour
     [SerializeField]
     private float debugPointSize = 1.0f;
 
+    private Mesh m_mesh;
+
 
     private void Awake()
     {
@@ -29,6 +31,10 @@ public class SplineRoadBuilder : MonoBehaviour
     private void OnEnable()
     {
         Spline.Changed += OnSplineChanged;
+        Rebuild();
+    }
+    private void Start()
+    {
         Rebuild();
     }
     private void OnDisable()
@@ -40,15 +46,19 @@ public class SplineRoadBuilder : MonoBehaviour
     {
         Rebuild();
     }
-
+    private void OnValidate()              // rebuild when you change resolution in the Inspector
+    {
+        if (isActiveAndEnabled) Rebuild();
+    }
 
     private void Update()
     {
- 
+        Rebuild();
     }
     
     private void Rebuild()
     {
+        if (m_splineSampler == null || m_meshFilter == null || resolution < 1) return;
         GetVerts();
         BuildMesh();
     }
@@ -80,15 +90,20 @@ public class SplineRoadBuilder : MonoBehaviour
 
     private void BuildMesh()
     {
-        Mesh m = new Mesh();
+        if (m_mesh == null)
+        {
+            m_mesh = new Mesh { name = "Road Mesh" };
+        }
+        m_mesh.Clear();
+
         List<Vector3> verts = new List<Vector3>();
         List<int> tris = new List<int>();
-        int offset = 0;
+        //int offset = 0;
 
         int length = m_vertsP2.Count;
         for (int currentSplineIndex = 0; currentSplineIndex < m_splineSampler.numSplines; currentSplineIndex++)
         {
-            int splineOffset = resolution * currentSplineIndex;
+            int splineOffset = (resolution +1) * currentSplineIndex;
             for (int currentSplinePoint = 1; currentSplinePoint < resolution + 1; currentSplinePoint++)
             {
                 int vertOffset = splineOffset + currentSplinePoint;
@@ -97,36 +112,24 @@ public class SplineRoadBuilder : MonoBehaviour
                 Vector3 p3 = m_vertsP1[vertOffset];
                 Vector3 p4 = m_vertsP2[vertOffset];
 
-                /*if (currentSplinePoint == length)
+
+                int offset = verts.Count;   // simpler than computing it by hand
+
+                verts.AddRange(new[] { p1, p2, p3, p4 });
+                tris.AddRange(new[]
                 {
-                    p3 = m_vertsP1[0];
-                    p4 = m_vertsP2[0];
-                }
-                else
-                {
-                    p3 = m_vertsP1[currentSplinePoint];
-                    p4 = m_vertsP2[currentSplinePoint];
-                }*/
-
-                offset = 4*  resolution * currentSplineIndex;
-                offset += 4 * (currentSplinePoint - 1);
-
-                int t1 = offset + 0;
-                int t2 = offset + 2;
-                int t3 = offset + 3;
-
-                int t4 = offset + 3;
-                int t5 = offset + 1;
-                int t6 = offset + 0;
-
-                verts.AddRange(new List<Vector3> { p1, p2, p3, p4 });
-                tris.AddRange(new List<int> { t1, t2, t3, t4, t5, t6 });
+                offset + 0, offset + 2, offset + 3,
+                offset + 3, offset + 1, offset + 0
+                });
             }
-            m.SetVertices(verts);
-            m.SetTriangles(tris, 0);
         }
-        m_meshFilter.mesh = m;
+
+        m_mesh.SetVertices(verts);
+        m_mesh.SetTriangles(tris, 0);
+        m_mesh.RecalculateNormals();
+        m_meshFilter.sharedMesh = m_mesh;
     }
+
 
     private void OnDrawGizmos()
     {
