@@ -4,12 +4,20 @@ using UnityEngine;
 public class TowerScriptRobot : MonoBehaviour
 {
     public Tower data;
-    private float cooldown;
+    private float cooldown = 0;
 
     public Transform target;
 
     //Reference to script
     public EnemyMovementManager spawner;
+
+    
+
+    public void shoot(GameObject bulletPrefab, Vector3 position, Vector3 direction)
+    {
+        GameObject instance = Instantiate(bulletPrefab, position, Quaternion.identity);
+        instance.GetComponent<ProjectileClassScript>().Setup(direction);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +40,7 @@ public class TowerScriptRobot : MonoBehaviour
             cooldown -= Time.deltaTime; // Cooldown for shooting
             if (cooldown <= 0f)
             {
-                data.shoot(data.bullet, transform.position, transform.forward);
+                shoot(data.bullet, transform.position, transform.forward);
                 cooldown = 1f / data.fireRate;
             }
         }
