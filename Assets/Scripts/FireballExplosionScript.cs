@@ -3,7 +3,8 @@ using UnityEngine;
 public class FireballExplosionScript : MonoBehaviour
 {
     float timeAlive =  0.5f;
-    int damage = 5;
+    float damage = 3.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +32,7 @@ public class FireballExplosionScript : MonoBehaviour
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
         {
-            enemy.currentHP -= damage;
+            enemy.currentHP -= damage; // FIKSAA LOGIIKKA
         }
         else
         {

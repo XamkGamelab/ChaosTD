@@ -5,7 +5,7 @@ public abstract class ProjectileClassScript : MonoBehaviour
     //Tää clässi tehtiin alunperin sen takia että tarvitaan vaan yksi torni skripti joka kutsuu yhtä ammus scriptiä, joka sitten dynaamisesti twerkkaa
     public abstract void Setup(Vector3 direction);
 
-    public int damage;
+    public float damage;
 
     Collider Collider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

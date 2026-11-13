@@ -37,6 +37,8 @@ public class TestEnemy : MonoBehaviour
         }
     }
 
+    
+
     private void OnDestroy()
     {
         Debug.Log("Enemy " + name + " died!");
