@@ -246,3 +246,5 @@ MonoBehaviour:
   damage: 5
   currentSpeed: 3
   armor: 0
+  score: 0
+  movementManager: {fileID: 0}

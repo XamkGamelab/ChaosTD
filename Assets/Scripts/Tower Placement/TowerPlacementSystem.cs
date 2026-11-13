@@ -7,6 +7,7 @@ public class TowerPlacementSystem : MonoBehaviour
     public int selectedTower = -1;
     private Vector3 worldPosition;
     GameObject previewObject = null;
+    float towerYOffset;
 
 
     private bool TryGetPlacementPosition(out Vector3 position)
@@ -30,12 +31,22 @@ public class TowerPlacementSystem : MonoBehaviour
     {
         if (previewObject == null)
         {
-            previewObject = Instantiate(towers[selectedTower], position, towers[selectedTower].transform.rotation);
+ 
+            previewObject = Instantiate(towers[selectedTower], position + 
+                new Vector3(0,towerYOffset,0), towers[selectedTower].transform.rotation);
+            towerYOffset = GetOffset(); 
+            
         }
         else
-            previewObject.transform.position = position;
+            previewObject.transform.position = position + new Vector3(0, towerYOffset, 0);
     }
 
+    float GetOffset()
+    {
+        Mesh mesh = previewObject.GetComponent<MeshFilter>().mesh;
+        Bounds bounds = mesh.bounds;
+        return bounds.size.y / 2;
+    }
     public void PlaceTower()
     {
         if (selectedTower < 0 || selectedTower >= towers.Length)
@@ -47,7 +58,8 @@ public class TowerPlacementSystem : MonoBehaviour
         if (TryGetPlacementPosition(out Vector3 position))
         {
             Debug.Log(position);
-            Instantiate(towers[selectedTower], position, towers[selectedTower].transform.rotation);
+            Instantiate(towers[selectedTower], position +
+                new Vector3(0, towerYOffset, 0), towers[selectedTower].transform.rotation);
             selectedTower = -1;
             Debug.Log("Tower placed");
             Destroy(previewObject);

@@ -131,7 +131,7 @@ public class EnemyMovementManager : MonoBehaviour
         }
 
         Transform enemyTransform = enemy.transform;
-        enemyTransform.position = (Vector3)position;
+        enemyTransform.position = (Vector3)position + new Vector3(0,enemy.meshYOffset,0);
 
         Vector3 forward = (Vector3)tangent;
         Vector3 upDirection = (Vector3)up;
