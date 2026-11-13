@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class EnemyMovementManager : MonoBehaviour
 
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private int splineIndex;
+    [SerializeField] private ScoreManager scoreManager;
 
     private readonly List<TestEnemy> activeEnemies = new List<TestEnemy>();
 
@@ -100,11 +102,7 @@ public class EnemyMovementManager : MonoBehaviour
                 activeEnemies.RemoveAt(i);
                 HandleReachedEnd(enemy);
             }
-
-
         }
-
-
     }
     private void ApplyTransform(TestEnemy enemy)
     {
@@ -132,6 +130,7 @@ public class EnemyMovementManager : MonoBehaviour
 
     private void HandleReachedEnd(TestEnemy enemy)
     {
+        scoreManager.RemoveScore(enemy.GetDamage());
         // Adjust score here later
         Destroy(enemy.gameObject);
     }

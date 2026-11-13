@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TestEnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyClassScript
   HP: 5
-  damage: 5
-  enemyName: 
-  size: 5
+  damage: 100
+  enemyName: Test Enemy
+  size: 1
   speed: 3
   armor: 5
   prefab: {fileID: 8312347888803911703, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
