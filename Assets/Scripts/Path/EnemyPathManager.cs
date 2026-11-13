@@ -28,7 +28,7 @@ public class EnemySplineManager : MonoBehaviour
         splineContainer = GetComponent<SplineContainer>();
         mainPath = splineContainer.Splines[0];
     }
-    void SetEnemyLocation( Spline splinePath)
+    void SetEnemyLocation(Spline splinePath)
     {
     }
     void IterateEnemies()

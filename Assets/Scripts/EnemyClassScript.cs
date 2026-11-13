@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 [CreateAssetMenu(fileName = "EnemyClassScript", menuName = "Scriptable Objects/EnemyClassScript")]
 public class Enemy : ScriptableObject
@@ -9,5 +10,6 @@ public class Enemy : ScriptableObject
     public float size;
     public float speed;
     public float armor;
+    public int score;
     public TestEnemy prefab;
 }

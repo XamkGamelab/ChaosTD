@@ -16,7 +16,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         movementManager = GetComponent<EnemyMovementManager>();
-        // Spawn one enemy of the first configured type.
     }
 
     void Update()
@@ -65,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         TestEnemy enemy = Instantiate(data.prefab);
-        enemy.Initialize(data);
+        enemy.Initialize(data, movementManager);
         movementManager.AddEnemy(enemy);
     }
 }

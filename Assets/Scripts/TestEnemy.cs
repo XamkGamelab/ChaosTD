@@ -6,20 +6,24 @@ public class TestEnemy : MonoBehaviour
     public int damage;
     public float currentSpeed;
     public float armor;
+    public int score;
+
+    public EnemyMovementManager movementManager;
     public float DistanceTravelled { get; set; }
 
-    public void Initialize(Enemy data)
+    public void Initialize(Enemy data, EnemyMovementManager mvmntMngr)
     {
-        
+
         currentHP = data.HP;
-        damage = data.damage;
         currentSpeed = data.speed;
         armor = data.armor;
-        Debug.Log("Enemy Spawned");
         gameObject.name = data.enemyName;
+        score = data.score;
 
-        // Assuming size is a uniform scale multiplier.
-        transform.localScale *= data.size;
+        movementManager = mvmntMngr;  // For destruction
+
+        transform.localScale *= data.size;  // Assuming size is uniform
+
         DistanceTravelled = 0f;
     }
 
@@ -28,13 +32,14 @@ public class TestEnemy : MonoBehaviour
         return damage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void DoDamage(int damage) // Damage is a positive value
     {
-
+        currentHP -= damage;
         if (currentHP <= 0)
         {
-            Destroy(gameObject);
+            movementManager.RemoveEnemy(this, true);
         }
+
     }
 
     
@@ -42,5 +47,6 @@ public class TestEnemy : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("Enemy " + name + " died!");
+        Destroy(gameObject);
     }
 }
