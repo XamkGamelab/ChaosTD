@@ -20,7 +20,6 @@ public class TestEnemy : MonoBehaviour
 
         // Assuming size is a uniform scale multiplier.
         transform.localScale *= data.size;
-
         DistanceTravelled = 0f;
     }
 
@@ -31,8 +30,7 @@ public class TestEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        currentHP -= 1;
-        Destroy(other.gameObject);
+
         if (currentHP <= 0)
         {
             Destroy(gameObject);

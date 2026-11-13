@@ -12,14 +12,4 @@ public class Tower : ScriptableObject
     public string towerName;
     public string description;
     public GameObject bullet;
-
-    public void shoot(GameObject bulletPrefab,Vector3 position, Vector3 direction)
-    {
-        //Vector3 enemyLocation = 
-
-
-
-        GameObject instance = Instantiate(bulletPrefab, position, Quaternion.identity);
-        instance.GetComponent<lasermove>().Setup(direction);
-    }
 }
