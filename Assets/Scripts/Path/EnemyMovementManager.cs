@@ -69,9 +69,22 @@ public class EnemyMovementManager : MonoBehaviour
         activeEnemies.Add(enemy);
     }
 
-    public void RemoveEnemy(TestEnemy enemy)
+    public void RemoveEnemy(TestEnemy enemy, bool killed)
     {
-        activeEnemies.Remove(enemy);
+        Debug.Log("RemoveEnemy Called");
+        if (killed)     // If enemy is killed before reaching end, increase score
+        {
+            scoreManager.AddScore(enemy.score);
+        }
+        else            // Else remove score
+        {
+            scoreManager.RemoveScore(enemy.score);
+        }
+ 
+        //activeEnemies.Remove(enemy);
+        Destroy(enemy);
+
+
     }
 
     // Update is called once per frame
@@ -99,8 +112,10 @@ public class EnemyMovementManager : MonoBehaviour
 
             if (enemy.DistanceTravelled >= pathLength)
             {
-                activeEnemies.RemoveAt(i);
-                HandleReachedEnd(enemy);
+                RemoveEnemy(enemy, false);
+                // activeEnemies.RemoveAt(i);
+                // HandleReachedEnd(enemy);
+
             }
         }
     }
@@ -128,10 +143,10 @@ public class EnemyMovementManager : MonoBehaviour
     }
 
 
-    private void HandleReachedEnd(TestEnemy enemy)
+    /*private void HandleReachedEnd(TestEnemy enemy)
     {
         scoreManager.RemoveScore(enemy.GetDamage());
         // Adjust score here later
         Destroy(enemy.gameObject);
-    }
+    }*/
 }
