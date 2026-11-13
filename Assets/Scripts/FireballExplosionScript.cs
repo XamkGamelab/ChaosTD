@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class FireballExplosionScript : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class FireballExplosionScript : MonoBehaviour
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
         {
-            enemy.currentHP -= damage; // FIKSAA LOGIIKKA
+            enemy.DoDamage(damage);
         }
         else
         {

@@ -6,7 +6,6 @@ public class SniperBulletScript : ProjectileClassScript
 {
 
     public EnemyMovementManager spawner;
-    public float target;
     float timeAlive = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,12 +14,8 @@ public class SniperBulletScript : ProjectileClassScript
         spawner = FindFirstObjectByType<EnemyMovementManager>(FindObjectsInactive.Include);
         if (spawner.GetFirstEnemy() != null)
         {
-            target = spawner.GetFirstEnemy().currentHP; // Get the transform of the first enemy in list
-            spawner.GetFirstEnemy().currentHP -= damage;
-            if (spawner.GetFirstEnemy().currentHP <= 0)
-            {
-                Destroy(spawner.GetFirstEnemy());
-            }
+            TestEnemy target = spawner.GetFirstEnemy(); // Get the transform of the first enemy in list
+            target.DoDamage(damage);
 
         }
         else
@@ -32,10 +27,7 @@ public class SniperBulletScript : ProjectileClassScript
     // Update is called once per frame
     void Update()
     {
-        if (spawner.GetFirstEnemy().currentHP <= 0)
-        {
-            Destroy(spawner.GetFirstEnemy());
-        }
+        
 
         timeAlive -= Time.deltaTime;
 
@@ -48,4 +40,4 @@ public class SniperBulletScript : ProjectileClassScript
     {
         
     }
-    }
+}

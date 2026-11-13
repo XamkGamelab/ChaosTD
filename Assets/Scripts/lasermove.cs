@@ -24,5 +24,18 @@ public class lasermove : ProjectileClassScript
     {
         
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
+        if (enemy != null)
+        {
+            enemy.DoDamage(damage);
+            Destroy(gameObject);
+        }
+        else
+        {
 
+        }
+
+    }
 }

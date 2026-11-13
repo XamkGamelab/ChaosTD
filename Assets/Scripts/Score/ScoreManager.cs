@@ -16,12 +16,14 @@ public class ScoreManager : MonoBehaviour
     private void UpdateScore()
     {
        scoreText.text = "Score: " + score;
+        Debug.Log("Update Score called");
     }
         
     public void AddScore(float amount)
     {
         score += amount;
         UpdateScore();
+        Debug.Log("Add score called");
     }
     public void RemoveScore(float amount)
     {

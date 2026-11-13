@@ -18,4 +18,5 @@ MonoBehaviour:
   size: 1
   speed: 3
   armor: 5
+  score: 100
   prefab: {fileID: 8312347888803911703, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}

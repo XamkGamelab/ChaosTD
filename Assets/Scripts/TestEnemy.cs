@@ -32,7 +32,7 @@ public class TestEnemy : MonoBehaviour
         return damage;
     }
 
-    public void DoDamage(int damage) // Damage is a positive value
+    public void DoDamage(float damage) // Damage is a positive value
     {
         currentHP -= damage;
         if (currentHP <= 0)
