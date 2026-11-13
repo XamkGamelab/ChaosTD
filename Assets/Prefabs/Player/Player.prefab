@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerPlacementSystem
   towers:
-  - {fileID: 0}
+  - {fileID: 6318353267761935085, guid: c7b98d1ed72c54547a65b4601dc694f1, type: 3}
   selectedTower: -1
 --- !u!114 &962481224257837212
 MonoBehaviour:
