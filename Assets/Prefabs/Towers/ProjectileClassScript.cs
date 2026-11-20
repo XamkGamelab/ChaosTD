@@ -7,6 +7,8 @@ public abstract class ProjectileClassScript : MonoBehaviour
 
     public float damage;
 
+    public ParticleSystem ps;
+    
     Collider Collider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +19,7 @@ public abstract class ProjectileClassScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void OnTriggerEnter(Collider other)
@@ -25,7 +27,14 @@ public abstract class ProjectileClassScript : MonoBehaviour
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
         {
-            enemy.currentHP -= damage;
+            enemy.DoDamage(damage);
+
+            ParticleSystem hitEffect = Instantiate<ParticleSystem>(ps);
+            hitEffect.transform.position = gameObject.transform.position;
+            //hitEffect.transform.rotation = gameObject.transform.rotation;
+            if (hitEffect != null)
+                hitEffect.Play(true);
+
             Destroy(gameObject);
         }
         else

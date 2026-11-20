@@ -7,6 +7,7 @@ public class TestEnemy : MonoBehaviour
     public float currentSpeed;
     public float armor;
     public int score;
+    public float meshYOffset;
 
     public EnemyMovementManager movementManager;
     public float DistanceTravelled { get; set; }
@@ -19,6 +20,7 @@ public class TestEnemy : MonoBehaviour
         armor = data.armor;
         gameObject.name = data.enemyName;
         score = data.score;
+        meshYOffset = GetOffset();
 
         movementManager = mvmntMngr;  // For destruction
 
@@ -26,7 +28,12 @@ public class TestEnemy : MonoBehaviour
 
         DistanceTravelled = 0f;
     }
-
+    float GetOffset()
+    {
+        Mesh mesh = gameObject.GetComponent<MeshFilter>().mesh;
+        Bounds bounds = mesh.bounds;
+        return bounds.size.y / 2;
+    }
     public int GetDamage()
     {
         return damage;

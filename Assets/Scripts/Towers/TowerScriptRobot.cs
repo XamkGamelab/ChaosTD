@@ -11,12 +11,14 @@ public class TowerScriptRobot : MonoBehaviour
     //Reference to script
     public EnemyMovementManager spawner;
 
+
     
 
     public void shoot(GameObject bulletPrefab, Vector3 position, Vector3 direction)
     {
         GameObject instance = Instantiate(bulletPrefab, position, Quaternion.identity);
         instance.GetComponent<ProjectileClassScript>().Setup(direction);
+        
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
