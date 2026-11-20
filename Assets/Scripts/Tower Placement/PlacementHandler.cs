@@ -4,6 +4,6 @@ public class PlacementHandler : MonoBehaviour
 {
     void RequestTower(int towerIndex)
     {
-    
+        
     }
 }

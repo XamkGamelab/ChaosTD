@@ -24,7 +24,7 @@ public class lasermove : ProjectileClassScript
     {
         
     }
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
@@ -37,5 +37,5 @@ public class lasermove : ProjectileClassScript
 
         }
 
-    }
+    }*/
 }
