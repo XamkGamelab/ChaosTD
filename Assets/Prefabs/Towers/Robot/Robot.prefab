@@ -251,4 +251,3 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: aa39f4955ddc61345aaddb8968633b5b, type: 2}
   target: {fileID: 5084096562400526815, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
   spawner: {fileID: 0}
-  fuckAssEffect: {fileID: 868841694287162460, guid: 8d68a6ab832b42b438a44f5a254cc34c, type: 3}

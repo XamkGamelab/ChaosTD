@@ -9,7 +9,7 @@ public class FireballExplosionScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        ExplosionDamage(transform.position,10f);
     }
 
     // Update is called once per frame
@@ -28,17 +28,16 @@ public class FireballExplosionScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter(Collider other)
+    void ExplosionDamage(Vector3 center, float radius)
     {
-        TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
-        if (enemy != null)
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius/2);
+        foreach (var hitCollider in hitColliders)
         {
-            enemy.DoDamage(damage);
+            TestEnemy enemy = hitCollider.GetComponent<TestEnemy>();
+            if(enemy != null)
+            {
+                enemy.DoDamage(damage);
+            }
         }
-        else
-        {
-
-        }
-
     }
 }

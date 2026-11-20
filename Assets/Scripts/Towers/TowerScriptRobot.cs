@@ -29,27 +29,45 @@ public class TowerScriptRobot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        target = null;
 
+        //FindTarget(transform.position, data.range);
         if (spawner.GetFirstEnemy() != null)
         {
-
-            target = spawner.GetFirstEnemy().transform; // Get the transform of the first enemy in list
-            transform.LookAt(target); //Look at the first enemy
-            Vector3 kulmat = transform.eulerAngles;
-            kulmat.x = 0f;
-            kulmat.z = 0f;
-            transform.eulerAngles = kulmat;
-            cooldown -= Time.deltaTime; // Cooldown for shooting
-            if (cooldown <= 0f)
+            foreach (TestEnemy enemy in spawner.GetEnemyList())
             {
-                shoot(data.bullet, transform.position, transform.forward);
-                cooldown = 1f / data.fireRate;
+                if (Vector3.Distance(transform.position, enemy.transform.position) < data.range)
+                {
+                    //Source: Code Monkey
+                    target = enemy.transform;
+                    break;
+                }
             }
+            if(target != null)
+            {
+                transform.LookAt(target); //Look at the targeted enemy
+                Vector3 kulmat = transform.eulerAngles;
+                kulmat.x = 0f;
+                kulmat.z = 0f;
+                transform.eulerAngles = kulmat;
+                if (cooldown <= 0f)
+                {
+                    shoot(data.bullet, transform.position, transform.forward);
+                    cooldown = 1f / data.fireRate;
+                }
+            }
+            else{
+                //Do nothing
+            }
+            
         }
+
         else
         {
             //Do nothing
         }
-
+        cooldown -= Time.deltaTime; // Cooldown for shooting
     }
 }
+
+

@@ -6,10 +6,11 @@ public class SniperBulletScript : ProjectileClassScript
 {
 
     public EnemyMovementManager spawner;
-    float timeAlive = 0.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        lifetime = 2;
         damage = 5;
         spawner = FindFirstObjectByType<EnemyMovementManager>(FindObjectsInactive.Include);
         if (spawner.GetFirstEnemy() != null)
@@ -27,11 +28,9 @@ public class SniperBulletScript : ProjectileClassScript
     // Update is called once per frame
     void Update()
     {
-        
+        lifetime -= Time.deltaTime;
 
-        timeAlive -= Time.deltaTime;
-
-        if (timeAlive <= 0.0f)
+        if (lifetime <= 0.0f)
         {
             Destroy(gameObject);
         }

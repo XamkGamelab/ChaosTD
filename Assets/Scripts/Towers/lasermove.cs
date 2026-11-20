@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class lasermove : ProjectileClassScript
 {
-    private float force = 40f;
-    private Rigidbody rb;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        damage = 1;
     }
     public override void Setup(Vector3 direction)
     {
+        lifetime = 5f;
+        damage = 1;
+        force = 40f;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
@@ -22,20 +22,11 @@ public class lasermove : ProjectileClassScript
     // Update is called once per frame
     private void Update()
     {
-        
-    }
-    /*public void OnTriggerEnter(Collider other)
-    {
-        TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
-        if (enemy != null)
+        lifetime -= Time.deltaTime;
+
+        if (lifetime <= 0.0f)
         {
-            enemy.DoDamage(damage);
             Destroy(gameObject);
         }
-        else
-        {
-
-        }
-
-    }*/
+    }
 }

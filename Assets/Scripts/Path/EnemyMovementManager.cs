@@ -55,6 +55,11 @@ public class EnemyMovementManager : MonoBehaviour
         return activeEnemies[0];
     }
 
+    public List<TestEnemy> GetEnemyList()
+    {
+        return activeEnemies;
+    }
+
     public void AddEnemy(TestEnemy enemy)
     {
         if (!splineReady || enemy == null)

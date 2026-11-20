@@ -8,7 +8,14 @@ public abstract class ProjectileClassScript : MonoBehaviour
     public float damage;
 
     public ParticleSystem ps;
-    
+
+    public float force;
+    public Rigidbody rb;
+
+    public float lifetime = 5f;
+
+    public bool isAwake;
+
     Collider Collider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

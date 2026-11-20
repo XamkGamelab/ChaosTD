@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Fireballmove : ProjectileClassScript
 {
-    private float force = 40f;
-    private Rigidbody rb;
 
     bool isQuitting;
 
@@ -12,10 +10,12 @@ public class Fireballmove : ProjectileClassScript
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        damage = 0;
     }
     public override void Setup(Vector3 direction)
     {
+        lifetime = 5;
+        damage = 0;
+        force = 40f;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
@@ -27,7 +27,12 @@ public class Fireballmove : ProjectileClassScript
     // Update is called once per frame
     private void Update()
     {
+        lifetime -= Time.deltaTime;
 
+        if (lifetime <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnApplicationQuit()
