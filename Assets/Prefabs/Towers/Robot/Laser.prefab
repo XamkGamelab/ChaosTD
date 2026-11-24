@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6338013175882319958}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.08, y: 0.4, z: 0.17}
   m_ConstrainProportionsScale: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   damage: 0
-  ps: {fileID: 868841694287162460, guid: 8d68a6ab832b42b438a44f5a254cc34c, type: 3}
+  hitParticleSystem: {fileID: 5685836312616296301, guid: 7f84523cf1570f446aa34173b2f92611, type: 3}
 --- !u!54 &2529150695327133406
 Rigidbody:
   m_ObjectHideFlags: 0
