@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public abstract class ProjectileClassScript : MonoBehaviour
@@ -7,8 +8,9 @@ public abstract class ProjectileClassScript : MonoBehaviour
 
     public float damage;
 
-    public ParticleSystem ps;
-    
+    [SerializeField] protected GameObject hitParticleSystem;
+
+
     Collider Collider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,19 +24,12 @@ public abstract class ProjectileClassScript : MonoBehaviour
        
     }
 
-    public void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
         {
             enemy.DoDamage(damage);
-
-            ParticleSystem hitEffect = Instantiate<ParticleSystem>(ps);
-            hitEffect.transform.position = gameObject.transform.position;
-            //hitEffect.transform.rotation = gameObject.transform.rotation;
-            if (hitEffect != null)
-                hitEffect.Play(true);
-
             Destroy(gameObject);
         }
         else
