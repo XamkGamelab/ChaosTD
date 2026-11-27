@@ -109,6 +109,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MenuInputs",
+            "id": "f56f2350-48fc-4e3a-8ec4-1e00450ced6c",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "3b1e8cf6-b39e-44c8-ac46-ba3b539ae087",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8e632931-2502-4344-8e50-6973ea084ae7",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8567d8e6-3e8c-48cb-88ec-8e0b1ad371ee",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

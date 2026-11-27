@@ -113,7 +113,7 @@ public class SplineRoadBuilder : MonoBehaviour
                 Vector3 p4 = m_vertsP2[vertOffset];
 
 
-                int offset = verts.Count;   // simpler than computing it by hand
+                int offset = verts.Count;   
 
                 verts.AddRange(new[] { p1, p2, p3, p4 });
                 tris.AddRange(new[]
@@ -126,6 +126,7 @@ public class SplineRoadBuilder : MonoBehaviour
 
         m_mesh.SetVertices(verts);
         m_mesh.SetTriangles(tris, 0);
+
         m_mesh.RecalculateNormals();
         m_meshFilter.sharedMesh = m_mesh;
     }

@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,11 +11,16 @@ namespace ChaosTD
     {
 
         [SerializeField] private TowerPlacementSystem placementSystem;
+        [SerializeField] private GameStateSystem gameStateSystem;
         private InputAction _select1Action;
         private InputAction _select2Action;
         private InputAction _select3Action;
         private InputAction _select4Action;
         private InputAction _placeAction;
+
+
+        private InputAction _pauseAction;
+
 
         private void Awake()
         {
@@ -30,6 +37,13 @@ namespace ChaosTD
             _select3Action.performed += OnSelect3Performed;
             _select4Action.performed += OnSelect4Performed;
             _placeAction.performed += OnTowerPlacePerformed;
+
+            var menuMap = InputSystem.actions.FindActionMap("MenuInputs");
+            
+            _pauseAction = menuMap.FindAction("Pause");
+
+            _pauseAction.performed += OnPausePerformed;
+            
         }
 
         private void OnSelect1Performed(InputAction.CallbackContext context)
@@ -67,6 +81,14 @@ namespace ChaosTD
             placementSystem.PlaceTower(); 
         }
 
+        private void OnPausePerformed(InputAction.CallbackContext context)
+        {
+            if (gameStateSystem.gameState() == GameStateSystem.GameState.Paused)
+                gameStateSystem.SwitchState(GameStateSystem.GameState.Playing);
+            else
+                gameStateSystem.SwitchState(GameStateSystem.GameState.Paused);
+        }
+
         private void OnDestroy()
         {
             _select1Action.performed -= OnSelect1Performed;
@@ -74,6 +96,7 @@ namespace ChaosTD
             _select3Action.performed -= OnSelect3Performed;
             _select4Action.performed -= OnSelect4Performed;
             _placeAction.performed -= OnTowerPlacePerformed;
+            _pauseAction.performed -= OnPausePerformed;
         }
     }
 }

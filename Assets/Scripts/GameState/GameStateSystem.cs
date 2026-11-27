@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -12,8 +13,16 @@ public class GameStateSystem : MonoBehaviour
     {
         Playing, Paused, GameOver
     }
+
+    public void Start()
+    {
+        SwitchState(GameState.Playing);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     GameState currentState = GameState.Paused;
+
+    public GameState gameState()
+    { return currentState; }
     public void SwitchState(GameState state)
     {
         if (currentState == state) return;
@@ -28,7 +37,15 @@ public class GameStateSystem : MonoBehaviour
         switch (currentState)
         {
             case GameState.Playing:
-                //pauseMenu.disable;
+                pauseMenu.TogglePauseMenu(false);
+                break;
+            case GameState.Paused:
+                pauseMenu.TogglePauseMenu(true);
+                break;
+            case GameState.GameOver:
+                SceneManager.LoadSceneAsync(0);
+                break;
+            default: 
                 break;
         }
     }
