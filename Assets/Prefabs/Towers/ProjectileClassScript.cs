@@ -35,6 +35,7 @@ public abstract class ProjectileClassScript : MonoBehaviour
         TestEnemy enemy = other.GetComponent<TestEnemy>(); //MUUTA TÄÄÄ PERUS CLÄSS SKRIPTIKSI KUN KEKSIT
         if (enemy != null)
         {
+            Debug.Log("On lihava");
             enemy.DoDamage(damage);
             Destroy(gameObject);
         }

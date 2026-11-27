@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
         if(roundTime <= 0f && directorRunning == false)
         {
             points = round * 100;
-            roundTime = 30f;
+            roundTime = 20f;
             round += 1;
             directorRunning = true;
             StartCoroutine(SpawnDirector());
@@ -112,6 +112,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.Initialize(data, movementManager);
             movementManager.AddEnemy(enemy);
             points -= data.cost;
+            spawnInterval = data.size;
         }
         else
         {

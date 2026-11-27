@@ -16,7 +16,7 @@ public class TestEnemy : MonoBehaviour
 
     public void Initialize(Enemy data, EnemyMovementManager mvmntMngr)
     {
-        cost = data.score;
+        cost = data.cost;
         currentHP = data.HP;
         currentSpeed = data.speed;
         armor = data.armor;
