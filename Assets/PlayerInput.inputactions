@@ -32,6 +32,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SelectTower3",
+                    "type": "Button",
+                    "id": "a8e10814-fa5e-42b6-8dcf-28447484cac6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectTower4",
+                    "type": "Button",
+                    "id": "0505d7f7-5136-43a4-8080-99e0d5a4f660",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -65,6 +83,28 @@
                     "processors": "",
                     "groups": ";KBM",
                     "action": "PlaceTower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ccc9ab6-7aba-4f5a-a97e-b5c33ff89bc7",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "SelectTower3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c50222ec-058c-4126-bcfa-40f1af80a6b6",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "SelectTower4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

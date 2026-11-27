@@ -9,12 +9,14 @@ public class TestEnemy : MonoBehaviour
     public int score;
     public float meshYOffset;
 
+    public int cost;
+
     public EnemyMovementManager movementManager;
     public float DistanceTravelled { get; set; }
 
     public void Initialize(Enemy data, EnemyMovementManager mvmntMngr)
     {
-
+        cost = data.score;
         currentHP = data.HP;
         currentSpeed = data.speed;
         armor = data.armor;

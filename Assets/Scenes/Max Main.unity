@@ -172,9 +172,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8065806024347787841, guid: 6c37d488e00f736449c1b4724b4841bc, type: 3}
+      propertyPath: towers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065806024347787841, guid: 6c37d488e00f736449c1b4724b4841bc, type: 3}
       propertyPath: 'towers.Array.data[0]'
       value: 
       objectReference: {fileID: 6318353267761935085, guid: c7b98d1ed72c54547a65b4601dc694f1, type: 3}
+    - target: {fileID: 8065806024347787841, guid: 6c37d488e00f736449c1b4724b4841bc, type: 3}
+      propertyPath: 'towers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7618304026994918521, guid: c8c95263a2a4d9e4a98e26f23e8a6dd2, type: 3}
+    - target: {fileID: 8065806024347787841, guid: 6c37d488e00f736449c1b4724b4841bc, type: 3}
+      propertyPath: 'towers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2554441844223720375, guid: 36ed145859fd69948b0fa5e8217d06ae, type: 3}
+    - target: {fileID: 8065806024347787841, guid: 6c37d488e00f736449c1b4724b4841bc, type: 3}
+      propertyPath: 'towers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2400707880684026280, guid: 6992c83981f3e7942af47e89367840be, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -468,7 +484,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &2083304914
+--- !u!43 &1753828559
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -793,7 +809,7 @@ PrefabInstance:
     - target: {fileID: 739481114727619292, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2083304914}
+      objectReference: {fileID: 1753828559}
     - target: {fileID: 1128595335178155086, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -842,6 +858,14 @@ PrefabInstance:
       propertyPath: score
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6806250872564582527, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806250872564582527, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
+      propertyPath: 'enemies.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
     - target: {fileID: 7519842122476840146, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.02
