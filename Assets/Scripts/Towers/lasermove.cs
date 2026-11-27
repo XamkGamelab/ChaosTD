@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class lasermove : ProjectileClassScript
 {
-    private float force = 40f;
-    private Rigidbody rb;
     Vector3 dir;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
-        damage = 1;
     }
     public override void Setup(Vector3 direction)
     {
+        damage = 1;
+        lifetime = 5;
+        force = 40f;
         dir = direction;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
@@ -25,7 +25,12 @@ public class lasermove : ProjectileClassScript
     // Update is called once per frame
     private void Update()
     {
-        
+        lifetime -= Time.deltaTime;
+
+        if (lifetime <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
     }
     protected override void OnTriggerEnter(Collider other)
     {

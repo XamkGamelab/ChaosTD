@@ -11,9 +11,6 @@ public class TowerScriptRobot : MonoBehaviour
     //Reference to script
     public EnemyMovementManager spawner;
 
-
-    
-
     public void shoot(GameObject bulletPrefab, Vector3 position, Vector3 direction)
     {
         GameObject instance = Instantiate(bulletPrefab, position, Quaternion.identity);
@@ -30,8 +27,6 @@ public class TowerScriptRobot : MonoBehaviour
     void Update()
     {
         target = null;
-
-        //FindTarget(transform.position, data.range);
         if (spawner.GetFirstEnemy() != null)
         {
             foreach (TestEnemy enemy in spawner.GetEnemyList())

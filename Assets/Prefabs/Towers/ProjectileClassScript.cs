@@ -8,6 +8,12 @@ public abstract class ProjectileClassScript : MonoBehaviour
 
     public float damage;
 
+    public float lifetime;
+
+    public float force;
+
+    public Rigidbody rb;
+
     [SerializeField] protected GameObject hitParticleSystem;
 
 
