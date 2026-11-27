@@ -248,4 +248,5 @@ MonoBehaviour:
   armor: 0
   score: 0
   meshYOffset: 0
+  cost: 0
   movementManager: {fileID: 0}

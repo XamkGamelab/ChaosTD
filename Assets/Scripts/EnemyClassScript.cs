@@ -12,4 +12,5 @@ public class Enemy : ScriptableObject
     public float armor;
     public int score;
     public TestEnemy prefab;
+    public int cost;
 }

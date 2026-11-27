@@ -484,7 +484,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1118626525
+--- !u!43 &1753828559
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,7 +809,7 @@ PrefabInstance:
     - target: {fileID: 739481114727619292, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1118626525}
+      objectReference: {fileID: 1753828559}
     - target: {fileID: 1128595335178155086, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -858,6 +858,14 @@ PrefabInstance:
       propertyPath: score
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6806250872564582527, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806250872564582527, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
+      propertyPath: 'enemies.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8420365838451548873, guid: eca76057e13bbe34a84f6497fcbf3485, type: 3}
     - target: {fileID: 7519842122476840146, guid: bc12fc69596c4fe40be0d041eb70ef4d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.02
