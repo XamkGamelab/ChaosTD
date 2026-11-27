@@ -130,7 +130,7 @@ public class SplineRoadBuilder : MonoBehaviour
         m_meshFilter.sharedMesh = m_mesh;
     }
 
-
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         for (int i = 0; i < m_vertsP1.Count; i++)
@@ -141,4 +141,5 @@ public class SplineRoadBuilder : MonoBehaviour
             Handles.DrawLine(m_vertsP1[i], m_vertsP2[i]);
         }
     }
+#endif
 }

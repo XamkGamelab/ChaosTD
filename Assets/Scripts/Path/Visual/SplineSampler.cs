@@ -47,12 +47,12 @@ public class SplineSampler : MonoBehaviour
         p1 = position + (right * m_width);
         p2 = position + (-right * m_width);
     }
-    private void OnDrawGizmos()
+   /* private void OnDrawGizmos()
     {
         Handles.matrix = transform.localToWorldMatrix;
         Handles.SphereHandleCap(0, p1, Quaternion.identity, 1f, EventType.Repaint);
         Handles.SphereHandleCap(0, p2, Quaternion.identity, 1f, EventType.Repaint);
         Handles.DrawLine(p1, p2);
-    }
+    }*/
    
 }

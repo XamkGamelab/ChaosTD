@@ -79,7 +79,8 @@ public class EnemyMovementManager : MonoBehaviour
         Debug.Log("RemoveEnemy Called");
         if (killed)     // If enemy is killed before reaching end, increase score
         {
-            scoreManager.AddScore(enemy.score);
+            if (scoreManager != null)
+                scoreManager.AddScore(enemy.score);
             Debug.Log("Points should be added by now.");
         }
         else            // Else remove score
